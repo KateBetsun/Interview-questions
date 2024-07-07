@@ -5,13 +5,13 @@ import java.util.HashMap;
 //all methods must have complexity 0[1]
 public class MyArray<T> {
 
-    private HashMap<Integer, T> hashMap;
+    private HashMap<Integer, T> hashMap = new HashMap<>();
     private T defaultValue;
     private int size;
 
     public void setAll(T value) {
 		//all array's elements should be set with a given value
-    	hashMap = new HashMap<>();
+    	hashMap = new HashMap<>(); // complexity 0[1]
     	this.defaultValue = value; 
     }
 

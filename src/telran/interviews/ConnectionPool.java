@@ -24,7 +24,8 @@ public class ConnectionPool {
 		// return a connection from the pool if it exists
 		//otherwise creates new collection, add in pool and returns 
 		// new created connections
-		return pool.computeIfAbsent(connection.id(), id -> connection);
+		long id = connection.id();
+		return pool.computeIfAbsent(id, k -> new Connection(id));
 	}
 	public boolean isInPool(long id) {
 		// returns true if in a given connection exists in the pool
